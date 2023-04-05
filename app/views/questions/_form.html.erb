@@ -1,0 +1,6 @@
+<%= form_with model: [@test, @question] do |form| %>
+    <p><%= form.label :body %></p>
+    <p><%= form.text_field :body %></p>
+    <p><%= form.submit %></p>
+<% end %>
+<div><%= link_to 'Back', test_path(@test) %></div>
