@@ -1,0 +1,14 @@
+<h3><%= @test.title%></h3>
+<table>
+  <tr>
+    <th>Question<th>
+    <th></th>
+  </tr>
+  <%= render @test.questions %>
+</table>
+<p><%= link_to 'new question ', new_admin_test_question_path(@test) %></p>
+<p><%= link_to 'back', admin_tests_path %></p>
+<div><%= link_to 'delete test',  admin_test_path(@test),
+                                method: :delete,
+                                data: { confirm: 'Sure?' }
+                                %></div>

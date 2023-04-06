@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <p class="nav user">
+      Welcome <b><%= current_user.email %></b>Guru |
+  </p>
+<% end %>
+
+<div class='logout'><%= button_to "Logout", destroy_user_session_path, method: :delete %></div>
