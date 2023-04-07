@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Questions</th>
-    <th colspan= 2>Action</th>
+    <th><%= t('.name') %></th>
+    <th><%= t('.questions') %></th>
+    <th colspan= 2><%= t('.action') %></th>
   </tr>
   <%= render @tests %>
 </table>
 <br>
-<div><%= link_to 'New Test', new_admin_test_path %></div>
+<div><%= link_to t('.new'), new_admin_test_path %></div>

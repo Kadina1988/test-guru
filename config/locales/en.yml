@@ -1,33 +1,92 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update test'
+    select:
+      prompt: 'Please select:'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+
+  layouts:
+    nav:
+      welcome: 'Welcome %{email} Guru'
+      logout: 'Exit'
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: 'Tricky tests'
+      name: 'Name'
+      questions: 'Questions'
+      action: 'Action'
+      start: 'Start'
+    test:
+      start: 'Start'
+
+  test_passages:
+    show:
+      test: 'Test'
+      question: 'Question'
+      from: 'from'
+      tests: 'all tests'
+      next: 'next question'
+    result:
+      header: 'The test %{title} was completed'
+      question: 'questions'
+      result: 'Result %{number}%'
+      successfull: 'The test was successfully passed'
+      notsuccesfull: ' The test was not passed successfully'
+      tests: 'all tests'
+      answers:
+        zero: 'zero correct answers'
+        one: "%{count} answer correct from %{questions}"
+        other: "%{count} answers correct from %{questions}"
+
+  admin:
+    tests:
+      create:
+        succes: 'Test was created'
+      index:
+        header: 'Tests'
+        name: 'Name'
+        questions: 'Questions'
+        action: 'Action'
+        new: 'New test'
+      test:
+        update: 'Update'
+        delete: 'Delete'
+      show:
+        questions: 'Questions'
+        delete: 'Delete'
+        new_question: 'Create question'
+        back: 'Back'
+      new:
+        back: 'Back'
+      edit:
+        back: 'Back'
+    nav:
+      panel: 'Admin Panel'
+    questions:
+      question:
+        open: 'Open'
+
+  users:
+    session:
+      create:
+        welcome: 'Welcome %{name}'
+
+  test_mailer:
+    completed_test:
+      subject: 'You just completed the Test Guru test'

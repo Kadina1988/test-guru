@@ -1,10 +1,21 @@
-<h2>Tests</h2>
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <h2><%= t('.header') %></h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Questions</th>
-    <th>Action</th>
-  </tr>
-  <%= render @tests %>
-</table>
+  <div class="container text-center">
+      <table>
+        <tr>
+          <div class='row'>
+            <div class='col-7'><%= t('.name') %></div>
+            <div class='col-2'><%= t('.questions')%></div>
+            <div class='col-3'><%= t('.action')%></div>
+          </div>
+        </tr>
+        <%= render @tests %>
+      </table>
+  </div>
+</html>

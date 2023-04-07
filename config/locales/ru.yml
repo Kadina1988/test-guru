@@ -1,0 +1,94 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+    select:
+      prompt: 'Пожалуйста выберите:'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+
+  layouts:
+    nav:
+      welcome: 'Привет %{email} Гуру'
+      logout: 'Выход'
+
+  shared:
+    errors:
+      header:
+        one: "%{count} ошибка была обнаружена"
+        few: "%{count} обшибки было обнаружено"
+        other: "%{count} обшибки было обнаружено"
+        many: "%{count} обшибок было обнаружено"
+
+  tests:
+    index:
+      header: 'Доступные тесты'
+      name: 'Название'
+      questions: 'Кол-во вопросов'
+      action: 'Действие'
+    test:
+      start: 'Старт'
+
+  test_passages:
+    show:
+      test: 'Тест'
+      question: 'Вопрос'
+      from: 'из'
+      tests: 'список тестов'
+      next: 'следующий вопрос'
+    result:
+      header: 'Тест %{title} пройден'
+      question: 'вопросов'
+      result: 'Результат %{number}%'
+      successfull: 'Тест пройден успешно'
+      notsuccesfull: 'Тест не пройден'
+      tests: 'список тестов'
+      answers:
+        zero: '0 правильных ответов'
+        one: '%{count} правильный ответ из %{questions} вопросов'
+        other: '%{count} правильных ответов из %{questions} вопросов'
+        few: '%{count} правильных ответа из %{questions} вопросов'
+
+  admin:
+    tests:
+      create:
+        succes: 'Тест успешно создан'
+      index:
+        header: 'Тесты'
+        name: 'Название'
+        questions: 'Кол-во вопросов'
+        action: 'Действие'
+        new: 'Новый тест'
+      test:
+        update: 'Изменить'
+        delete: 'Удалить'
+      show:
+        questions: 'Вопросы'
+        delete: 'Удалить'
+        new_question: 'Создать вопрос'
+        back: 'Назад'
+      new:
+        back: 'Назад'
+      edit:
+        back: 'Назад'
+    nav:
+      panel: 'Панель Админа'
+    questions:
+      question:
+        open: 'открыть'
+
+  users:
+    sessions:
+      create:
+        welcome: 'Добро пожаловать %{name}'
+
+  test_mailer:
+    completed_test:
+      subject: 'Вы прошли тест'
