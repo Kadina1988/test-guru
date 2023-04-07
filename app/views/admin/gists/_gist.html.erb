@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to "#{gist.question.body}".slice(0..25), admin_question_path(gist.question) %> </td>
+  <td><%= link_to "#{gist.url}".slice(12..21), gist.url, target: :blank  %></td>
+  <td><%= gist.user.email %>
+</tr>

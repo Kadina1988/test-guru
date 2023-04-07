@@ -1,0 +1,14 @@
+<h2>Gists</h2>
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope='col'>Gist_URL</th>
+      <th scope='col'>User_email</th>
+    </tr>
+  </thead>
+  <%= render @gists %>
+</table>
+<br>
+<div><%= link_to 'Back', admin_tests_path %></div>
