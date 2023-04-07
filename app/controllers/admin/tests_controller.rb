@@ -8,16 +8,16 @@ class Admin::TestsController < Admin::BaseController
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.created_tests.new
   end
 
   def create
-    test = current_user.created_tests.build(test_params)
+    @test = current_user.created_tests.build(test_params)
 
-    if test.save
-      redirect_to admin_tests_path
+    if @test.save
+      redirect_to admin_tests_path, notice: t('.succes')
     else
-      redirect_to new_admin_test_path
+      render :new, status: :unprocessable_entity
     end
   end
 
