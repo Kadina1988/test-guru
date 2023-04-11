@@ -1,7 +1,7 @@
 <tr>
   <div class='row'>
-    <div class='col-7'><%= test.title %></div>
-    <div class='col-2'><%= test.questions.count %></div>
-    <div class='col-3 '><%= button_to t('.start'), start_test_path(test), class: "btn btn-outline-success btn-sm" %></div>
+    <td class='col-7'><%= test.title %></td>
+    <td class='col-2'><%= test.questions.count %></td>
+    <td class='col-3 '><%= button_to t('.start'), start_test_path(test), class: "btn btn-outline-success btn-sm" %></td>
   </div>
 </tr>
