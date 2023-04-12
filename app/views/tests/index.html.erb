@@ -1,17 +1,17 @@
-  <div class="container text-center">
-      <table class='table'>
-        <tr>
-          <div class='row'>
-            <td class='col-7 sort-by-title pointer'>
-              <%= t('.name') %>
-              <%= octicon 'arrow-up', class: 'text-success hide ' %>
-              <%= octicon 'arrow-down', class: 'text-success hide' %>
-            </td>
-            <td class='col-2'><%= t('.questions')%></td>
-            <td class='col-3'><%= t('.action')%></td>
-          </div>
-        </tr>
-        <%= render @tests %>
-      </table>
-  </div>
-</html>
+<div class="container text-center">
+    <table class='table'>
+      <tr>
+        <div class='row'>
+          <td class='col-7 sort-by-title pointer'>
+            <%= t('.name') %>
+            <%= octicon 'arrow-up', class: 'text-success hide  ' %>
+            <%= octicon 'arrow-down', class: 'text-success hide ' %>
+          </td>
+          <td class='col-2'><%= t('.questions')%></td>
+          <td class='col-3'><%= t('.action')%></td>
+        </div>
+      </tr>
+      <%= render @tests %>
+    </table>
+</div>
+

@@ -9,7 +9,7 @@ class GistsController < ApplicationController
                       gist = current_user.gists.create!(question_id: test_passage.current_question.id,
                                                         url: result.html_url)
 
-                      { notice: t(".success_html", url: gist.url ) }
+                      { notice: t('.success_html', url: gist.url) }
                     else
                       { alert: t('.failure') }
                     end
