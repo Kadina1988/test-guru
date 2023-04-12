@@ -18,14 +18,14 @@ function sortRowsByTitle() {
         sortedRows.push(rows[i])
     }
 
-    if (this.getElementByld('arrow').classList.contains('hide')) {
+    if (this.querySelector('.text-success-up').classList.contains('hide')) {
     sortedRows.sort(compareRowsAsc)
-    this.getElementByld('arrow').classList.remove('hide')
-    this.getElementByld('arrow').classList.add('hide')
+    this.querySelector('.text-success-up').classList.remove('hide')
+    this.querySelector('.text-success-down').classList.add('hide')
     } else {
     sortedRows.sort(compareRowsDesc)
-    this.getElementByld('arrow').classList.remove('hide')
-    this.getElementByld('arrow').classList.add('hide')
+    this.querySelector('.text-success-down').classList.remove('hide')
+    this.querySelector('.text-success-up').classList.add('hide')
     }
 
     var sortedTable = document.createElement('table')
