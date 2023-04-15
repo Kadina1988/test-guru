@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   devise :database_authenticatable,
-  :registerable,
-  :recoverable,
-  :rememberable,
-  :validatable,
-  :trackable,
-  :confirmable
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
+         :trackable,
+         :confirmable
 
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :test_passages

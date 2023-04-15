@@ -9,10 +9,9 @@ module ApplicationHelper
             rel: { nofollow: true, noopener: true }
   end
 
+  def flash_message(type = :alert)
+    return unless flash[type.to_sym]
 
-    def flash_message(type = :alert)
-      return unless flash[type.to_sym]
-
-      tag.div flash[type.to_sym], id: type, class: "flash #{type}"
-    end
+    tag.div flash[type.to_sym], id: type, class: "flash #{type}"
+  end
 end
