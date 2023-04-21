@@ -19,11 +19,11 @@ function sortRowsByTitle() {
    }
 
   if (this.querySelector('.text-success-up').classList.contains('hide')) {
-  sortedRows.sort(Rows.compareRowsAsc)
+  sortedRows.sort(compareRowsAsc)
   this.querySelector('.text-success-up').classList.remove('hide')
   this.querySelector('.text-success-down').classList.add('hide')
   } else {
-  sortedRows.sort(Rows.compareRowsDesc)
+  sortedRows.sort(compareRowsDesc)
   this.querySelector('.text-success-down').classList.remove('hide')
   this.querySelector('.text-success-up').classList.add('hide')
   }

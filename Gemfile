@@ -25,7 +25,7 @@ gem 'devise', '~> 4.0'
 gem 'devise-i18n'
 
 gem 'rails-i18n', '~> 6.0'
-
+gem 'jquery-rails'
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'octokit', '~> 5.0'
 

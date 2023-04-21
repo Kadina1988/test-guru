@@ -1,5 +1,6 @@
 <h2>Tests</h2>
 
+<%= render 'shared/errors', object: @test %>
 <table class='table'>
   <tr>
     <th class='sort-by-title pointer'>
@@ -8,7 +9,7 @@
       <%= octicon 'arrow-down', class: 'text-success-down hide' %>
     </th>
     <th><%= t('.questions') %></th>
-    <th colspan= 2><%= t('.action') %></th>
+    <th colspan=3><%= t('.action') %></th>
   </tr>
   <%= render @tests %>
 </table>
