@@ -67,9 +67,11 @@ ru:
         action: 'Действие'
         new: 'Новый тест'
       test:
+        show: 'Открыть'
         update: 'Изменить'
         delete: 'Удалить'
       show:
+        edit: 'Редактировать Тест'
         questions: 'Вопросы'
         delete: 'Удалить'
         new_question: 'Создать вопрос'
@@ -78,6 +80,8 @@ ru:
         back: 'Назад'
       edit:
         back: 'Назад'
+      form_inline:
+        submit: 'OK'
     nav:
       panel: 'Панель Админа'
     questions:

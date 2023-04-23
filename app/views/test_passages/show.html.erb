@@ -2,6 +2,10 @@
 
 <p><%= t('.question')%> <%= @test_passage.number %> <%= t('.from')%> <%= @test_passage.test.questions.count %> </p>
 
+<div id='myProgress'>
+  <div id='myBar' data-question-number='<%= @test_passage.number%>' data-all-question="<%= @test_passage.test.questions.count%>"></div>
+</div>
+
 <b><%= @test_passage.current_question.body %></b>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>

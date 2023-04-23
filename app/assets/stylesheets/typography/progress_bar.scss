@@ -1,0 +1,10 @@
+#myProgress {
+    width: 100%;
+    background-color: rgb(157, 199, 174);
+  }
+
+  #myBar {
+    width: attr(width + '%');
+    height: 30px;
+    background-color: rgb(51, 219, 79);
+  }

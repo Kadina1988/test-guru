@@ -65,9 +65,11 @@ en:
         action: 'Action'
         new: 'New test'
       test:
+        show: 'Open'
         update: 'Update'
         delete: 'Delete'
       show:
+        edit: 'Edit Test'
         questions: 'Questions'
         delete: 'Delete'
         new_question: 'Create question'
@@ -76,6 +78,8 @@ en:
         back: 'Back'
       edit:
         back: 'Back'
+      form_inline:
+        submit: 'OK'
     nav:
       panel: 'Admin Panel'
     questions:
