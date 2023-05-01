@@ -5,7 +5,7 @@ databases:
 
 services:
   - type: web
-    name: test_guru
+    name: test_guru1
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
