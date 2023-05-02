@@ -104,6 +104,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    faraday-retry (2.1.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -280,6 +282,7 @@ DEPENDENCIES
   devise (~> 4.0)
   devise-i18n
   dotenv-rails
+  faraday-retry (~> 2.1)
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener (~> 1.8.1)
