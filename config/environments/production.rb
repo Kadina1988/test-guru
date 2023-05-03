@@ -63,10 +63,10 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "new_app_production"
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :imap
   config.action_mailer.smtp_settings = {
-    address:              'smtp.mail.ru',
-    port:                 995,
+    address:              'imap.mail.ru',
+    port:                 993,
     user_name:            ENV['SMTP_USERNAME'],
     password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
