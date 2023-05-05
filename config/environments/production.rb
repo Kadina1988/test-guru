@@ -62,14 +62,15 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "new_app_production"
   config.action_mailer.default_url_options = { host: 'https://test1-bocz.onrender.com'}
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     tls:                  true,
-    address:              'smtp.yandex.com',
+    address:              "smtp.yandex.com",
     port:                 465,
-    domain:               'yandex.com',
-    authentication:       :plain,
+    domain:               "yandex.com",
+    authentication:       "plain",
     enable_starttls_auto: true,
     user_name:            'aziev.kadina@yandex.ru',
     password:             'komsomolsknaamu'
