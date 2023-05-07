@@ -65,12 +65,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'test1-bocz.onrender.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    tls:                  true,
-    address:              "smtp.yandex.com",
+    # tls:                  true,
+    host:              "smtp.yandex.ru",
     port:                 587,
-    domain:               "yandex.com",
-    authentication:       "plain",
-    enable_starttls_auto: true,
+    encryption:           'tls'
+    # domain:               "yandex.ru",
+    # authentication:       "plain",
+    # enable_starttls_auto: true,
     user_name:            'kadina.aziev@yandex.ru',
     password:             'ottuimdyzlkxfbsm' }
 
