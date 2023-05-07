@@ -66,13 +66,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     tls:                  true,
-    address:              "smtp.yandex.ru",
+    address:              "smtp.yandex.com",
     port:                 465,
-    domain:               "yandex.ru",
+    # domain:               "yandex.ru",
     authentication:       "plain",
     enable_starttls_auto: true,
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'] }
+    user_name:            'kadina.aziev@yandex.ru',
+    password:             'ottuimdyzlkxfbsm' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
