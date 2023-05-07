@@ -68,7 +68,7 @@ Rails.application.configure do
     # tls:                  true,
     host:              "smtp.yandex.ru",
     port:                 587,
-    encryption:           'tls'
+    encryption:           'tls',
     # domain:               "yandex.ru",
     # authentication:       "plain",
     # enable_starttls_auto: true,
