@@ -72,7 +72,8 @@ Rails.application.configure do
     user_name:            'aziev.kadina@yandex.ru',
     password:             'wbuhtakrwfpsuvuf',
     authentication:       "plain",
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    smtp_openssl_verify_mode: true
     }
 
   # Ignore bad email addresses and do not raise email delivery errors.
