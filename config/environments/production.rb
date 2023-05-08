@@ -69,7 +69,7 @@ Rails.application.configure do
     address:              "smtp.yandex.ru",
     port:                 465,
     # domain:               "gmail.com",
-    user_name:            'aziev.kadina',
+    user_name:            'aziev.kadina@yandex.ru',
     password:             'wbuhtakrwfpsuvuf',
     authentication:       "plain",
     enable_starttls_auto: true
