@@ -66,11 +66,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     tls:                  true,
-    address:              "smtp.gmail.com",
+    address:              "smtp.yandex.ru",
     port:                 465,
-    domain:               "gmail.com",
-    user_name:            'ramazan2015aziev@gmail.com',
-    password:             'shamilek',
+    # domain:               "gmail.com",
+    user_name:            'aziev.kadina',
+    password:             'wbuhtakrwfpsuvuf',
     authentication:       "plain",
     enable_starttls_auto: true
     }
