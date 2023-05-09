@@ -69,8 +69,8 @@ Rails.application.configure do
     address:              "smtp.yandex.ru",
     port:                 465,
     # domain:               "gmail.com",
-    user_name:            'aziev.kadina@yandex.ru',
-    password:             'wbuhtakrwfpsuvuf',
+    user_name:            ENV['SMTP_USERNAME'],
+    password:             ENV['SMTP_PASSWORD'],
     authentication:       "plain",
     enable_starttls_auto: true,
     smtp_openssl_verify_mode: true
