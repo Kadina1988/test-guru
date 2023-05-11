@@ -22,5 +22,5 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL']
+  url: 'postgres://test_guru_xy2r_user:F3hKwg91v7JYKqVFCXcDOF8M4ixxL58A@dpg-chej007dvk4sofd8t0rg-a/test_guru_xy2r'
   database: test_guru_production
