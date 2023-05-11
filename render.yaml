@@ -1,7 +1,7 @@
 databases:
   - name: test_guru
-    databaseName: test_spfo
-    user: test_spfo_user
+    databaseName: test_qnby
+    user: test_qnby_user
 
 services:
   - type: web
