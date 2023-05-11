@@ -64,7 +64,7 @@ Rails.application.configure do
 
   # config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'test1-bocz.onrender.com' }
-  config.action_mailer.delivery_method = :smtp, :letter_opener
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     tls:                  true,
     address:              "smtp.yandex.ru",
