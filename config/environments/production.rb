@@ -69,7 +69,7 @@ Rails.application.configure do
     tls:                  true,
     address:              "smtp.yandex.ru",
     port:                 465,
-    user_name:            ENV['SMTP_USERNAME'],
+    user_name:            'aziev.kadina@yandex.ru',
     password:             'atrohdddjxrpnmtb',
     authentication:       "plain",
     enable_starttls_auto: true,
