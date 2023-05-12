@@ -1,7 +1,7 @@
 databases:
   - name: guru
-    databaseName: guru_oxgm
-    user: guru_oxgm_user
+    databaseName: testi_elgy
+    user: testi_elgy_user
 
 services:
   - type: web
