@@ -1,7 +1,7 @@
 databases:
-  - name: test
-    databaseName: test_1y4z
-    user: test_1y4z_user
+  - name: guru
+    databaseName: guru_0p15
+    user: guru_0p15_user
 
 services:
   - type: web
