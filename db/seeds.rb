@@ -1,12 +1,12 @@
-users = User.create!([
-                      { first_name: 'Mike', last_name: 'Tison', email: 'az.ramaz@yandex.ru', password: '1234567shamilek', type: 'Admin'}
-                     ])
+# users = User.create!([
+#                       { first_name: 'Mike', last_name: 'Tison', email: 'az.ramaz@yandex.ru', password: '1234567shamilek', type: 'Admin'}
+#                      ])
 categories = Category.create!([{ title: 'Литература' }, { title: 'Информатика' }, { title: 'История' }])
 
 tests = Test.create!([
-                       { title: 'Ruby', category: categories[0], author: users[0] },
-                       { title: 'Java Script', category: categories[1], level: 2, author: users[0] },
-                       { title: 'Python', category: categories[2], author: users[0] }
+                       { title: 'Ruby', category: categories[0] },
+                       { title: 'Java Script', category: categories[1], level: 2 },
+                       { title: 'Python', category: categories[2] }
                      ])
 
 questions = Question.create!([
