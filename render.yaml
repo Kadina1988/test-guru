@@ -1,7 +1,7 @@
 databases:
   - name: t_guru
-    databaseName: guru_nrx1
-    user: guru_nrx1_user
+    databaseName: gur
+    user: gur_user
 
 services:
   - type: web
