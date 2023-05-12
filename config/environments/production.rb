@@ -68,9 +68,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     tls:                  true,
     address:              "smtp.yandex.ru",
-    port:                 587,
+    port:                 465,
     user_name:            ENV['SMTP_USERNAME'],
-    password:             'oahsuoyoycckkeck',
+    password:             'komsomolsknaamu',
     authentication:       "plain",
     enable_starttls_auto: true,
     smtp_openssl_verify_mode: true
