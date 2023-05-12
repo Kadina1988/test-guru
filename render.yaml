@@ -1,7 +1,7 @@
 databases:
-  - name: bak
-    databaseName: bak
-    user: bak_user
+  - name: bek
+    databaseName: bek
+    user: bek_user
 
 services:
   - type: web
