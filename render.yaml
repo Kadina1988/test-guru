@@ -1,7 +1,7 @@
 databases:
   - name: guru
-    databaseName: guru_8tv7
-    user: guru_8tv7_user
+    databaseName: kad
+    user: kad_user
 
 services:
   - type: web
