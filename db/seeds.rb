@@ -4,9 +4,9 @@ users = User.create!([
 categories = Category.create!([{ title: 'Литература' }, { title: 'Информатика' }, { title: 'История' }])
 
 tests = Test.create!([
-                       { title: 'Ruby', category: categories[0] },
-                       { title: 'Java Script', category: categories[1], level: 2 },
-                       { title: 'Python', category: categories[2] }
+                       { title: 'Ruby', category: categories[0], author: users[0] },
+                       { title: 'Java Script', category: categories[1], level: 2, author: users[0] },
+                       { title: 'Python', category: categories[2], author: users[0] }
                      ])
 
 questions = Question.create!([
