@@ -1,7 +1,7 @@
 databases:
-  - name: ram
-    databaseName: ram
-    user: ram_user
+  - name: rom
+    databaseName: rom
+    user: rom_user
 
 services:
   - type: web
