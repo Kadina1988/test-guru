@@ -1,7 +1,7 @@
 databases:
   - name: rom
-    databaseName: rich
-    user: rich_user
+    databaseName: mam
+    user: mam_user
 
 services:
   - type: web
