@@ -8,10 +8,9 @@ class TestMailer < ApplicationMailer
 
   def send_message(test_passage, message)
     @message = message
-    @test = test_passage.test
     @my_email = test_passage.user.email
-    @author = @test.author
+    @admin = Admin.take
 
-    mail to: @author.email
+    mail to: @admin.email
   end
 end

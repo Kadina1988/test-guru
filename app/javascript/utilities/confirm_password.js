@@ -10,14 +10,14 @@ function myInput() {
   let check = document.querySelector('.confirmation-password')
 
   if (password.value != check.value && check.value.length != 0) {
-    check.classList.remove('success')
-    check.classList.add('mistake')
+    password.classList.remove('success')
+    password.classList.add('mistake')
   } else if (check.value == check.value && check.value.length != 0) {
-    check.classList.remove('mistake')
-    check.classList.add('success')
+    password.classList.remove('mistake')
+    password.classList.add('success')
   } else {
-    check.classList.remove('mistake')
-    check.classList.remove('success')
+    password.classList.remove('mistake')
+    password.classList.remove('success')
   }
 }
-
+console.log(3)

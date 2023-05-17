@@ -1,9 +1,11 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show;end
+  def show
+    session[:return_to] ||= request.referer
+  end
 
-  def result; end
+  def result;end
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -24,7 +26,7 @@ class TestPassagesController < ApplicationController
       render :message
     else
       TestMailer.send_message(@test_passage, message).deliver_now
-      redirect_to test_passage_path, notice: t('.message_to_admin')
+      redirect_back fallback_location: root_path, notice: t('.message_to_admin')
     end
   end
 
