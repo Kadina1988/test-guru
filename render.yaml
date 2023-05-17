@@ -1,7 +1,7 @@
 databases:
-  - name: rom
-    databaseName: bab_extg
-    user: bab_extg_user
+  - name: newp
+    databaseName: newp
+    user: newp_user
 
 services:
   - type: web
