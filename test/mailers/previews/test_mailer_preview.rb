@@ -6,4 +6,11 @@ class TestMailerPreview < ActionMailer::Preview
 
     TestsMailer.completed_test(test_passage)
   end
+
+  def send_message
+    test_passage = TestPassage.new(user: User.first, test: Test.first)
+    message = 'Hello'
+
+    TestMailer.send_message(test_passage, message)
+  end
 end

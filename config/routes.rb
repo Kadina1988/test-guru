@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+      get :message
+      post :send_message
     end
   end
 
@@ -28,4 +30,7 @@ Rails.application.routes.draw do
     end
     resources :gists, only: :index
   end
+
+  # post 'send_message' => 'test_passages#send_message'
+
 end

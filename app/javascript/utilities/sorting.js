@@ -6,8 +6,8 @@ document.addEventListener('turbolinks:load', function() {
 
 
 function sortRowsByTitle() {
-  var table = document.querySelector('table')
-
+  let table = document.querySelector('table')
+  console.log('sa')
   //NodeList
   //https://developer.mozilla.org/ru/docs/Web/API/NodeList
   let rows = table.querySelectorAll('tr')
@@ -31,10 +31,13 @@ function sortRowsByTitle() {
   let sortedTable = document.createElement('table')
 
   sortedTable.classList.add('table')
-  sortedTable.appendChild(rows[0])
+  // sortedTable.appendChild(rows[0])
+  let head = sortedTable.createHead()
+  head.appendChild(rows[0])
 
+  let body = sortedTable.createTBody()
   for (var i = 0; i < sortedRows.length; i++) {
-    sortedTable.appendChild(sortedRows[i])
+    body.appendChild(sortedRows[i])
   }
 
   table.parentNode.replaceChild(sortedTable, table)

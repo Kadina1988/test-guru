@@ -48,6 +48,8 @@ en:
         zero: 'zero correct answers'
         one: "%{count} answer correct from %{questions}"
         other: "%{count} answers correct from %{questions}"
+    send_message:
+      message_to_admin: 'Message sent'
 
   gists:
     create:

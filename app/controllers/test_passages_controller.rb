@@ -1,7 +1,7 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passege, only: %i[show result update]
+  before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show; end
+  def show;end
 
   def result; end
 
@@ -13,6 +13,18 @@ class TestPassagesController < ApplicationController
       redirect_to result_test_passage_path(@test_passage)
     else
       redirect_to test_passage_path
+    end
+  end
+
+  def message;end
+
+  def send_message
+    message = params[:message][:body]
+    if message.empty?
+      render :message
+    else
+      TestMailer.send_message(@test_passage, message).deliver_now
+      redirect_to test_passage_path, notice: t('.message_to_admin')
     end
   end
 
