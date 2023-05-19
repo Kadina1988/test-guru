@@ -20,4 +20,4 @@ function myInput() {
     password.classList.remove('success')
   }
 }
-console.log(3)
+

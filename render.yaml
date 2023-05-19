@@ -1,7 +1,7 @@
 databases:
-  - name: newp
-    databaseName: newp
-    user: newp_user
+  - name: mail
+    databaseName: mail_ros7
+    user: mail_ros7_user
 
 services:
   - type: web

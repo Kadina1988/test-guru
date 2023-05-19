@@ -50,7 +50,9 @@ ru:
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
-    send_message:
+
+  messages:
+    create:
       message_to_admin: 'Сообщение было отправлено'
 
   gists:

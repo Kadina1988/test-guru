@@ -18,18 +18,6 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def message;end
-
-  def send_message
-    message = params[:message][:body]
-    if message.empty?
-      render :message
-    else
-      TestMailer.send_message(@test_passage, message).deliver_now
-      redirect_back fallback_location: root_path, notice: t('.message_to_admin')
-    end
-  end
-
   private
 
   def set_test_passege

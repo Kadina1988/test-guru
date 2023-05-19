@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
@@ -13,8 +14,6 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
-      get :message
-      post :send_message
     end
   end
 
@@ -31,6 +30,5 @@ Rails.application.routes.draw do
     resources :gists, only: :index
   end
 
-  # post 'send_message' => 'test_passages#send_message'
-
+  resources :messages, only: %i[new create]
 end

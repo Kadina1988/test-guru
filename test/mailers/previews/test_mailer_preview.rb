@@ -8,9 +8,10 @@ class TestMailerPreview < ActionMailer::Preview
   end
 
   def send_message
-    test_passage = TestPassage.new(user: User.first, test: Test.first)
     message = 'Hello'
+    admin = Admin.first
+    user_email = 'shef@mail.ru'
 
-    TestMailer.send_message(test_passage, message)
+    TestMailer.send_message(message, user_email)
   end
 end

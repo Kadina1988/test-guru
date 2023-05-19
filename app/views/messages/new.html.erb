@@ -1,7 +1,7 @@
 <h6>Введите сообщение:</h6>
-<%= form_for :message, url: send_message_test_passage_path do |form| %>
+<%= form_for :message, url: messages_path, method: :post do |form| %>
   <p><%= form.text_area :body %></p>
   <p><%= form.submit 'Send' %></p>
 <% end %>
 
-<p><%= link_to 'Отмена', :back %></p>
+<p><%= link_to 'Отмена', tests_path %></p>
