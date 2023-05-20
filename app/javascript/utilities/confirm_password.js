@@ -5,14 +5,14 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function myInput() {
-  let password = document.querySelector('.password')
+  let password = document.getElementById('password')
 
-  let check = document.querySelector('.confirmation-password')
+  let check = document.getElementById('confirmation-password')
 
-  if (password.value != check.value && check.value.length != 0) {
+  if (password.value !== check.value && check.value.length != 0) {
     password.classList.remove('success')
     password.classList.add('mistake')
-  } else if (check.value == check.value && check.value.length != 0) {
+  } else if (check.value === check.value && check.value.length != 0) {
     password.classList.remove('mistake')
     password.classList.add('success')
   } else {

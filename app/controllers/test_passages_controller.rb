@@ -1,9 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show
-    session[:return_to] ||= request.referer
-  end
+  def show;end
 
   def result;end
 
