@@ -142,7 +142,8 @@ ru:
         delete: 'Удалить'
         sure: 'Уверены?'
       gists:
-        back: 'Назад'
+        index:
+          back: 'Назад'
 
   users:
     sessions:

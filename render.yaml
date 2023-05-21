@@ -1,7 +1,7 @@
 databases:
-  - name: dip
-    databaseName: dip_8f70
-    user: dip_8f70_user
+  - name: dp
+    databaseName: dp
+    user: dp_user
 
 services:
   - type: web
