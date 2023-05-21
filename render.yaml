@@ -1,7 +1,7 @@
 databases:
-  - name: dep
-    databaseName: dep_whz0
-    user: dep_whz0_user
+  - name: dip
+    databaseName: dip_8f70
+    user: dip_8f70_user
 
 services:
   - type: web
