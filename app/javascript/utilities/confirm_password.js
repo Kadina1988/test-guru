@@ -1,15 +1,16 @@
 document.addEventListener('turbolinks:load', function() {
-  let confirmation = document.getElementById('confirmation-password')
+  let confirmInput = document.getElementById('confirmation-password')
+  let passInput = document.getElementById('password')
 
-  if (confirmation) { confirmation.addEventListener('input', myInput)}
+  if (confirmInput) { confirmInput.addEventListener('input', myInput)
+                      passInput.addEventListener('input', myInput) }
 })
 
 function myInput() {
   let password = document.getElementById('password')
-
   let check = document.getElementById('confirmation-password')
 
-  if (password.value !== check.value && (check.value.length != 0 || password.value.length > check.value.length)) {
+  if (password.value != check.value && check.value.length != 0 ) {
     password.classList.remove('success')
     password.classList.add('mistake')
   } else if (check.value === check.value && check.value.length != 0) {
@@ -19,10 +20,6 @@ function myInput() {
     password.classList.remove('mistake')
     password.classList.remove('success')
   }
-
-  if (password.value.length != check.value.length) {
-    console.log('super')
-  }
 }
 
-console.log('s')
+

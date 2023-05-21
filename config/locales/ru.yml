@@ -6,6 +6,12 @@ ru:
       test:
         create: 'Создать тест'
         update: 'Обновить тест'
+      question:
+        create: 'Создать вопрос'
+        update: 'Обновить вопрос'
+      answer:
+        create: 'Cоздать ответ'
+        update: 'Обновить ответ'
     select:
       prompt: 'Пожалуйста выберите:'
     label:
@@ -13,6 +19,11 @@ ru:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+      question:
+        body: 'Вопрос:'
+      answer:
+        body: 'Ответ:'
+        correct: 'Правильный:'
 
   shared:
     errors:
@@ -21,6 +32,10 @@ ru:
         few: "%{count} обшибки было обнаружено"
         other: "%{count} обшибки было обнаружено"
         many: "%{count} обшибок было обнаружено"
+    nav:
+      logout: 'Выход'
+      login: 'Войти'
+      sign_up: 'Зарегестрироватся'
 
   tests:
     index:
@@ -28,6 +43,7 @@ ru:
       name: 'Название'
       questions: 'Кол-во вопросов'
       action: 'Действие'
+      message_to_admin: 'Сообщение Администратору'
     test:
       start: 'Старт'
 
@@ -38,6 +54,7 @@ ru:
       from: 'из'
       tests: 'список тестов'
       next: 'следующий вопрос'
+      message_to_admin: 'Сообщение Администратору'
     result:
       header: 'Тест %{title} пройден'
       question: 'вопросов'
@@ -50,10 +67,14 @@ ru:
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
-
+      message_to_admin: 'Сообщение Администратору'
   messages:
     create:
       message_to_admin: 'Сообщение было отправлено'
+    new:
+      enter_message: 'Введите сообщение'
+      send: 'Отправить'
+      cancell: 'Отмена'
 
   gists:
     create:
@@ -70,11 +91,14 @@ ru:
         questions: 'Кол-во вопросов'
         action: 'Действие'
         new: 'Новый тест'
+        gists: 'Список Гистов'
       test:
+        sure: 'Вы уверены?'
         show: 'Открыть'
         update: 'Изменить'
         delete: 'Удалить'
       show:
+        sure: 'Вы уверены?'
         edit: 'Редактировать Тест'
         questions: 'Вопросы'
         delete: 'Удалить'
@@ -87,10 +111,36 @@ ru:
       form_inline:
         submit: 'OK'
     nav:
+      logout: 'Выход'
       panel: 'Панель Админа'
     questions:
+      show:
+        new_answer: 'Создать Ответ'
+        edit: 'Изменить'
+        all_questions: 'Назад'
+        delete: 'Удалить Вопрос'
+        sure: 'Вы уверены?'
+      edit:
+        back: 'Назад'
+      new:
+        back: 'Назад'
       question:
         open: 'открыть'
+    answers:
+      new:
+        back: 'Назад'
+      show:
+        back: 'Назад'
+        delete: 'Удалить'
+        sure: 'Уверены?'
+      edit:
+        edit_header: 'Редактировать Ответ'
+        back: 'Отмена'
+      answer:
+        show: 'Открыть'
+        edit: 'Изменить'
+        delete: 'Удалить'
+        sure: 'Уверены?'
 
   users:
     sessions:
@@ -105,3 +155,5 @@ ru:
     gist_params:
       description: 'Вопрос теста %{title} от Тест Гуру'
       files: 'тест-гуру-вопрос.txt'
+
+

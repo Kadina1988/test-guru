@@ -2,16 +2,16 @@
 
 <h5>Answers:</h5>
 
-<p><%= link_to 'new answer', new_admin_question_answer_path(@question) %></p>
+<p><%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %></p>
 
 <ol>
   <%= render @question.answers%>
 </ol>
 <p>
-  <%= link_to 'edit', edit_admin_question_path(@question)%> |
-  <%= link_to 'all questions', admin_test_path(@question.test)%>
+  <%= link_to t('.edit'), edit_admin_question_path(@question)%> |
+  <%= link_to t('.all_questions'), admin_test_path(@question.test)%>
 </p>
-<div><%= link_to 'delete', admin_question_path,
+<div><%= link_to t('.delete'), admin_question_path,
                             method: :delete,
-                            data: { confirm: 'are you sure?' }
+                            data: { confirm: t('.sure') }
                             %> </div>

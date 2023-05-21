@@ -33,8 +33,10 @@ function sortRowsByTitle() {
   let head = sortedTable.createTHead()
   head.appendChild(rows[0])
 
+  let body = sortedTable.createTBody()
+
   for (var i = 0; i < sortedRows.length; i++) {
-    sortedTable.appendChild(sortedRows[i])
+    body.appendChild(sortedRows[i])
   }
 
   table.parentNode.replaceChild(sortedTable, table)
