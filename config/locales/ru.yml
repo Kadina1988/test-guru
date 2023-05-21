@@ -141,6 +141,8 @@ ru:
         edit: 'Изменить'
         delete: 'Удалить'
         sure: 'Уверены?'
+      gists:
+        back: 'Назад'
 
   users:
     sessions:
