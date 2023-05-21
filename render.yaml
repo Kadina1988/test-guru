@@ -1,7 +1,7 @@
 databases:
-  - name: dp
-    databaseName: zp_guu7
-    user: zp_guu7_user
+  - name: zi
+    databaseName: zi
+    user: zi_user
 
 services:
   - type: web

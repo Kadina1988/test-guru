@@ -143,7 +143,7 @@ en:
         sure: 'Sure?'
     gists:
       index:
-        back: 'Назад'
+        back: 'Back'
 
   users:
     sessions:
