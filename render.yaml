@@ -1,7 +1,7 @@
 databases:
-  - name: mail
-    databaseName: mail_ros7
-    user: mail_ros7_user
+  - name: dep
+    databaseName: dep_whz0
+    user: dep_whz0_user
 
 services:
   - type: web
