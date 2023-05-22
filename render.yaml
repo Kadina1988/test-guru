@@ -1,7 +1,7 @@
 databases:
-  - name: zi
-    databaseName: zi
-    user: zi_user
+  - name: sham
+    databaseName: sham
+    user: sham_user
 
 services:
   - type: web
