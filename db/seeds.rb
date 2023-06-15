@@ -1,13 +1,16 @@
 users = User.create!([
                       { first_name: 'Mike', last_name: 'Tison', email: 'az.ramaz@yandex.ru', password: '1234567', type: 'Admin'},
-                      { first_name: 'Rama', last_name: 'Mamura', email: 'aziev.kadina@yandex.ru', password: 'ramazan' }
+                      { first_name: 'Rama', last_name: 'Mamura', email: 'aziev.kadina@yandex.ru', password: 'ramazan' },
+                      { first_name: 'Maga', last_name: 'Shpaga', email: 'ramazan@zan.com', password: 'ramazan' },
+                      { first_name: 'Evgeni', last_name: 'Prigozin', email: 'shamilek@lek.com', password: 'shamilek', type: 'Admin' }
                      ])
-categories = Category.create!([{ title: 'Литература' }, { title: 'Информатика' }, { title: 'История' }])
+categories = Category.create!([{ title: 'Backend' }, { title: 'Frontend' }])
 
 tests = Test.create!([
                        { title: 'Ruby', category: categories[0], author: users[0] },
                        { title: 'Java Script', category: categories[1], level: 2, author: users[0] },
-                       { title: 'Python', category: categories[2], author: users[0] }
+                       { title: 'Python', category: categories[1], author: users[0] },
+                       { title: 'Java', category: categories[0], author: users[0] }
                      ])
 
 questions = Question.create!([
@@ -22,7 +25,10 @@ questions = Question.create!([
                                  test: tests[1] },
                                { body: 'Какого оружия не существовало в Древнем мире?', test: tests[2] },
                                { body: 'Сколько хромосом у человека?', test: tests[2] },
-                               { body: 'Какой фрукт упал на голову Архимеду', test: tests[2] }
+                               { body: 'Какой фрукт упал на голову Архимеду', test: tests[2] },
+                               { body: 'Первая буква', test: tests[3] },
+                               { body: 'Вторая буква', test: tests[3] },
+                               { body: 'Третбя буква', test: tests[3] }
                              ])
 
 answers = Answer.create!([
@@ -53,5 +59,13 @@ answers = Answer.create!([
                            { body: 'Чтобы они не уплывали, когда спят', question: questions[8] },
                            { body: 'У насекомых могут быть крылья, у пауков они отсутствуют', question: questions[8],
                              correct: false },
-                           { body: 'Крякает, как утка', question: questions[8] }
-                         ])
+                           { body: 'Крякает, как утка', question: questions[8] },
+                           { body: 'В', question: questions[9], correct: false },
+                           { body: 'Ф', question: questions[9], correct: false },
+                           { body: 'А', question: questions[9] },
+                           { body: 'М', question: questions[10], correct: false },
+                           { body: 'С', question: questions[10], correct: false },
+                           { body: 'Б', question: questions[10] },
+                           { body: 'В', question: questions[11] },
+                           { body: 'Т', question: questions[11], correct: false },
+                           { body: 'Р', question: questions[11], correct: false }  ])

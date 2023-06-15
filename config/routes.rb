@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :gists, only: :create
+  resources :badges, only: :index
 
   namespace :admin do
     resources :tests do
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
+
   end
 
   resources :messages, only: %i[new create]

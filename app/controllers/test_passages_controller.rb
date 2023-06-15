@@ -3,7 +3,12 @@ class TestPassagesController < ApplicationController
 
   def show;end
 
-  def result;end
+  def result
+    puts 'backander' if current_user.backender?
+    puts 'all levele test' if current_user.all_level_tests?(@test_passage.test.level)
+    puts 'first time' if current_user.passed_first_time?
+    puts '100 persent' if current_user.one_hundred_percent?
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
