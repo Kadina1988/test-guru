@@ -66,6 +66,7 @@ ru:
         zero: '0 правильных ответов'
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
+        many: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
       message_to_admin: 'Сообщение Администратору'
   messages:

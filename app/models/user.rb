@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  attr_accessor :success_tests
-
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -29,17 +27,26 @@ class User < ApplicationRecord
     passed_tests.where(tests: { level: })
   end
 
-  def backender?
-    success_tests = []
-    test_passages.each do |passage|
-      success_tests << passage.test if passage.success?
-    end
+  def result
+    badges << Badge.find_by(rules: 'all backand tests') if backender?
+    badges << Badge.find_by(rules: 'all tests level') if all_level_tests?(test_passages.last.test.level)
+    badges << Badge.find_by(rules: 'passed the first time') if passed_first_time?
+    badges << Badge.find_by(rules: 'great result') if great_result?
+  end
 
-    backand_tests = []
-    success_tests.each do |t|
-      backand_tests << t if t.category_id == 1
-    end
-    backand_tests.sort == Test.where(category_id: 1).sort
+  private
+
+  def backender?
+      success_tests = []
+      test_passages.each do |passage|
+        success_tests << passage.test if passage.success?
+      end
+
+      backand_tests = []
+      success_tests.each do |t|
+        backand_tests << t if t.category_id == 1
+      end
+      backand_tests.uniq.count == Test.where(category_id: 1).count
   end
 
   def all_level_tests?(level)
@@ -51,13 +58,13 @@ class User < ApplicationRecord
   end
 
   def passed_first_time?
-    last_success_test = if test_passages.last.success?
-                           test_passages.last.test
+    last_success_test_id = if test_passages.last.success?
+                          test_passages.last.test.id
                         end
-    passed_test_ids.count(last_success_test.id) == 1
+    passed_test_ids.count(last_success_test_id) == 1
   end
 
-  def one_hundred_percent?
+  def great_result?
     test_passages.last.test_result == 100
   end
 end
