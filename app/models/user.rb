@@ -28,25 +28,30 @@ class User < ApplicationRecord
   end
 
   def result
-    badges << Badge.find_by(rules: 'all backand tests') if backender?
-    badges << Badge.find_by(rules: 'all tests level') if all_level_tests?(test_passages.last.test.level)
-    badges << Badge.find_by(rules: 'passed the first time') if passed_first_time?
-    badges << Badge.find_by(rules: 'great result') if great_result?
+    badge_backand    = Badge.find_by(rules: 'all backand tests')
+    badge_level      = Badge.find_by(rules: 'all tests level')
+    badge_first_time = Badge.find_by(rules: 'passed the first time')
+    badge_great      = Badge.find_by(rules: 'great result')
+
+    badges << badge_backand    if backender? && badge_backand != nil
+    badges << badge_level      if all_level_tests?(test_passages.last.test.level) && badge_level != nil
+    badges << badge_first_time if passed_first_time? && badge_first_time != nil
+    badges << badge_great      if great_result? && badge_great != nil
   end
 
   private
 
   def backender?
-      success_tests = []
-      test_passages.each do |passage|
-        success_tests << passage.test if passage.success?
-      end
+    success_tests = []
+    test_passages.each do |passage|
+      success_tests << passage.test if passage.success?
+    end
 
-      backand_tests = []
-      success_tests.each do |t|
-        backand_tests << t if t.category_id == 1
-      end
-      backand_tests.uniq.count == Test.where(category_id: 1).count
+    backand_tests = []
+    success_tests.each do |t|
+      backand_tests << t if t.category_id == 1
+    end
+    backand_tests.uniq.count == Test.where(category_id: 1).count
   end
 
   def all_level_tests?(level)
@@ -59,8 +64,8 @@ class User < ApplicationRecord
 
   def passed_first_time?
     last_success_test_id = if test_passages.last.success?
-                          test_passages.last.test.id
-                        end
+                            test_passages.last.test.id
+                           end
     passed_test_ids.count(last_success_test_id) == 1
   end
 

@@ -28,7 +28,11 @@ questions = Question.create!([
                                { body: 'Какой фрукт упал на голову Архимеду', test: tests[2] },
                                { body: 'Первая буква', test: tests[3] },
                                { body: 'Вторая буква', test: tests[3] },
-                               { body: 'Третбя буква', test: tests[3] }
+                               { body: 'Третбя буква', test: tests[3] },
+                               { body: 'question1', test: tests[0] },
+                               { body: 'question2', test: tests[0] },
+                               { body: 'question3', test: tests[0] },
+                               { body: 'question4', test: tests[0] }
                              ])
 
 answers = Answer.create!([
@@ -68,4 +72,16 @@ answers = Answer.create!([
                            { body: 'Б', question: questions[10] },
                            { body: 'В', question: questions[11] },
                            { body: 'Т', question: questions[11], correct: false },
-                           { body: 'Р', question: questions[11], correct: false }  ])
+                           { body: 'Р', question: questions[11], correct: false },
+                           { body: 'yes', question: questions[12] },
+                           { body: 'no', question: questions[12], correct: false },
+                           { body: 'yes', question: questions[13] },
+                           { body: 'no', question: questions[13], correct: false },
+                           { body: 'yes', question: questions[14] },
+                           { body: 'no', question: questions[14], correct: false },
+                           { body: 'yes', question: questions[15] },
+                           { body: 'no', question: questions[15], correct: false }
+                           ])
+
+badges = ([ { title: 'Backander', File: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' } ])
+
