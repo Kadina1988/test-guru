@@ -1,0 +1,7 @@
+<h6><%= t('.enter_message') %>:</h6>
+<%= form_for :message, url: messages_path, method: :post do |form| %>
+  <p><%= form.text_area :body %></p>
+  <p><%= form.submit t('.send') %></p>
+<% end %>
+
+<p><%= link_to t('.cancell'), tests_path %></p>

@@ -1,9 +1,9 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passege, only: %i[show result update]
+  before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show; end
+  def show;end
 
-  def result; end
+  def result;end
 
   def update
     @test_passage.accept!(params[:answer_ids])
