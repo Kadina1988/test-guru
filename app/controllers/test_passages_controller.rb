@@ -1,9 +1,15 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show;end
+  def show
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.end_time?
+  end
 
-  def result;end
+  def result
+    if @test_passage.success?
+      current_user.result
+    end
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])

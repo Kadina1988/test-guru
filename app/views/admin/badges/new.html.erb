@@ -1,0 +1,28 @@
+<h2>Create Badge<h2>
+
+<%= form_with model: [:admin, @badge] do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :file %> (URL adress)
+    <%= f.text_field :file %>
+  </p>
+
+  <p><%= f.label :rules %>:</p>
+  <p>
+    <% ['all backand tests', 'all tests level', 'passed the first time', 'great result'].each do |rule| %>
+      <%= f.radio_button :rules, rule %>
+      <%= label_tag rule, rule %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'back', :back %></p>
+
