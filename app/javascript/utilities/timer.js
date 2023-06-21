@@ -1,19 +1,25 @@
 document.addEventListener('turbolinks:load',function() {
-    let time = document.getElementById('time')
-    let testTime = time.dataset.testTimer
-
-    let fullTime = testTime * 60
-
-    if (time) { console.log("It's time" ) }
-
-    // if (time) setInterval(function() {
-
-    //     let seconds = fullTime%60
-    //     let minutes = fullTime/60%60
-    //     let strTimer = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
-    //     time.innerHTML = strTimer
-    //     fullTime--
-
-    // }, 1000)
+  let start = document.getElementById('start')
+  if (start) {start.addEventListener('click', showTime)}
 })
+  function showTime() {
+    let time = document.getElementById('time')
+
+    if (time) {
+      let testTime = time.dataset.testTimer
+      let fullTime = testTime * 60
+
+      setInterval(countDown, 1000)
+
+      function countDown() {
+        let seconds = fullTime%60
+        let minutes = fullTime/60%60
+        let strTimer = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
+
+        time.innerHTML = strTimer
+        fullTime--
+      }
+    }
+  }
+console.log('work bitch')
 
