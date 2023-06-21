@@ -1,16 +1,19 @@
-// dociment.AddEventListener('turbolinks:load',function() {
+document.addEventListener('turbolinks:load',function() {
+    let time = document.getElementById('time')
+    let testTime = time.dataset.testTimer
 
+    let fullTime = testTime * 60
 
-//   let x = 10
+    if (time) { console.log("It's time" ) }
 
-//   setInterval(countdown, 1000)
+    // if (time) setInterval(function() {
 
-//   function countdown() {
-//     document.getElementById('time').innerHTML = x
-//     x--
+    //     let seconds = fullTime%60
+    //     let minutes = fullTime/60%60
+    //     let strTimer = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
+    //     time.innerHTML = strTimer
+    //     fullTime--
 
-//   }
+    // }, 1000)
+})
 
-
-// })
-console.log('zaga')
