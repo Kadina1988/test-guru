@@ -34,13 +34,13 @@ class TestPassage < ApplicationRecord
     Time.current >= set_end_time
   end
 
-  private
-
   def set_end_time
     start_test = self.created_at
     seconds = test.timer * 60
     end_time = start_test + seconds
   end
+
+  private
 
   def set_current_question
     self.current_question = next_question

@@ -1,25 +1,27 @@
 document.addEventListener('turbolinks:load',function() {
-  let start = document.getElementById('start')
-  if (start) {start.addEventListener('click', showTime)}
-})
-  function showTime() {
+
     let time = document.getElementById('time')
 
     if (time) {
       let testTime = time.dataset.testTimer
-      let fullTime = testTime * 60
 
       setInterval(countDown, 1000)
 
       function countDown() {
-        let seconds = fullTime%60
-        let minutes = fullTime/60%60
-        let strTimer = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
+        let minutes = Math.floor(testTime / 60)
+        let seconds = testTime - minutes * 60
+        let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
-        time.innerHTML = strTimer
-        fullTime--
+        if (testTime == 0) {
+          alert('Time over')
+
+        }
+
+        time.innerHTML = strTime
+        testTime--
       }
     }
-  }
-console.log('work bitch')
+
+})
+// console.log('work bitch')
 
