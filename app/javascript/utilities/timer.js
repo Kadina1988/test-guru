@@ -23,5 +23,5 @@ document.addEventListener('turbolinks:load',function() {
     }
 
 })
-// console.log('work bitch')
+console.log('work bitch')
 
