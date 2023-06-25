@@ -22,10 +22,6 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def users_badges
-    @badges = current_user.badges
-  end
-
   private
 
   def set_test_passege

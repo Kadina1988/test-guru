@@ -11,3 +11,5 @@
 <p><%= link_to t('.tests'), tests_path %></p>
 
 <p><%= link_to 'Badges', badges_path %></p>
+
+<p class='badges'><%= link_to 'my badges', "/users/#{current_user.id}/badges" %></p>

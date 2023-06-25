@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :gists, only: :create
 
   resources :badges, only: :index
+  get 'users/:id/badges' => 'users#list_badges'
 
   namespace :admin do
     resources :tests do
