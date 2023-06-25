@@ -1,28 +1,33 @@
-<h2>Create Badge<h2>
+<div class='form-badge'>
+  <h2>Create Badge<h2>
 
-<%= form_with model: [:admin, @badge] do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
+  <%= form_with model: [:admin, @badge] do |f| %>
+  <%= render 'shared/errors', object: @badge %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'input' %>
+    </p>
 
-  <p>
-    <%= f.label :file %> (URL adress)
-    <%= f.text_field :file %>
-  </p>
+    <p>
+      <%= f.label :file %> (URL adress)
+      <%= f.text_field :file, class: 'input file' %>
+    </p>
 
-  <p><%= f.label :rules %>:</p>
-  <p>
-    <% ['all backand tests', 'all tests level', 'passed the first time', 'great result'].each do |rule| %>
-      <%= f.radio_button :rules, rule %>
-      <%= label_tag rule, rule %>
-    <% end %>
-  </p>
+    <p><%= f.label :rules %>:</p>
+    <div class='button-badge'>
+      <% ['all backand tests', 'all tests level', 'passed the first time', 'great result'].each do |rule| %>
+        <p>
+          <%= f.radio_button :rules, rule %>
+          <%= label_tag rule, rule %>
+        </p>
+      <% end %>
+    </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
 
-<p><%= link_to 'back', :back %></p>
+  <p><%= link_to 'back', :back %></p>
+</div>
 

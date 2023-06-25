@@ -93,6 +93,7 @@ ru:
         action: 'Действие'
         new: 'Новый тест'
         gists: 'Список Гистов'
+        badges: 'Бейджи'
       test:
         sure: 'Вы уверены?'
         show: 'Открыть'
@@ -145,6 +146,16 @@ ru:
     gists:
       index:
         back: 'Назад'
+    badges:
+      index:
+        title: 'Название'
+        view: 'Вид'
+        rule: 'Условия'
+        action: 'Действие'
+        new_badge: 'Создать Бейдж'
+        back: 'Назад'
+      badge:
+        delete: 'Удалить'
 
   users:
     sessions:

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
+
   resources :tests, only: :index do
     member do
       post :start
@@ -18,19 +19,18 @@ Rails.application.routes.draw do
   end
 
   resources :gists, only: :create
+
   resources :badges, only: :index
 
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
-
       resources :questions, shallow: :true do
         resources :answers, shallow: :true
       end
     end
     resources :gists, only: :index
     resources :badges
-
   end
 
   resources :messages, only: %i[new create]

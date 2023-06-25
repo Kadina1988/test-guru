@@ -12,9 +12,8 @@ document.addEventListener('turbolinks:load',function() {
         let seconds = testTime - minutes * 60
         let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
-        if (testTime == 0) {
-          alert('Time over')
-
+        if (testTime <= 1) {
+          location.reload()
         }
 
         time.innerHTML = strTime
@@ -23,5 +22,5 @@ document.addEventListener('turbolinks:load',function() {
     }
 
 })
-console.log('work bitch')
+
 

@@ -95,6 +95,7 @@ en:
         action: 'Action'
         new: 'New test'
         gists: 'Gists'
+        badges: 'Badges'
       test:
         sure: 'are you sure?'
         show: 'Open'
@@ -144,6 +145,16 @@ en:
     gists:
       index:
         back: 'Back'
+    badges:
+      index:
+        title: 'Title'
+        view: 'View'
+        rule: 'Rule'
+        action: 'Action'
+        new_badge: 'Create Badge'
+        back: 'Back'
+      badge:
+        delete: 'Delete'
 
   users:
     sessions:

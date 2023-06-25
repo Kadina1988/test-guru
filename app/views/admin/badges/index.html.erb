@@ -3,15 +3,14 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Viev</th>
-      <th>Rules</th>
-      <th>Type</th>
-      <th>Action</th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.view')%></th>
+      <th><%= t('.rule')%></th>
+      <th><%= t('.action')%></th>
     </tr>
   </thead>
   <%= render @badges %>
 </table>
 
-<p><%= link_to 'Create new bage', new_admin_badge_path %></p>
-<p><%= link_to 'Back', admin_tests_path %>
+<p><%= link_to t('.new_badge'), new_admin_badge_path %></p>
+<p><%= link_to t('.back'), admin_tests_path %>
