@@ -10,6 +10,9 @@ document.addEventListener('turbolinks:load',function() {
       function countDown() {
         let minutes = Math.floor(testTime / 60)
         let seconds = testTime - minutes * 60
+        if (seconds < 10) {
+          '0' + seconds
+        }
         let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
         if (testTime <= 1) {
@@ -20,7 +23,6 @@ document.addEventListener('turbolinks:load',function() {
         testTime--
       }
     }
-
 })
-
+console.log('salam')
 
