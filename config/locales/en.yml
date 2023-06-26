@@ -24,9 +24,14 @@ en:
       answer:
         body: 'Answer:'
         correct: 'Correct'
+      badge:
+        title: 'Title'
+        file: 'URL with badge'
+        rules: 'Rules'
     shared:
       nav:
         panel: 'Logout'
+
 
   shared:
     errors:
@@ -41,9 +46,13 @@ en:
       header: 'Tricky tests'
       name: 'Name'
       questions: 'Questions'
+      time: 'Time'
+      level: 'Level'
       action: 'Action'
       start: 'Start'
       message_to_admin: 'Message to the Admin'
+      badges: 'Badges'
+      my_badges: 'My Badges'
     test:
       start: 'Start'
 
@@ -55,6 +64,8 @@ en:
       tests: 'all tests'
       next: 'next question'
       message_to_admin: 'Message to the Admin'
+      badges: 'Badges'
+      my_badges: 'My Badges'
     result:
       header: 'The test %{title} was completed'
       question: 'questions'
@@ -67,6 +78,8 @@ en:
         zero: 'zero correct answers'
         one: "%{count} answer correct from %{questions}"
         other: "%{count} answers correct from %{questions}"
+      badges: 'Badges'
+      my_badges: 'My Badges'
 
   messages:
     create:

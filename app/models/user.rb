@@ -51,7 +51,7 @@ class User < ApplicationRecord
     success_tests.each do |t|
       backand_tests << t if t.category_id == 1
     end
-    backand_tests.uniq.count == Test.where(category_id: 1).count
+    backand_tests.uniq.count == Test.where(category_id: 1).count && passed_tests.last.category_id == 1
   end
 
   def all_level_tests?(level)

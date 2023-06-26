@@ -22,9 +22,9 @@
 
 <div id='time' data-test-timer='<%= remaining_time %>'></div>
 
-<p><%= link_to 'Badges', badges_path %></p>
+<p><%= link_to t('.badges'), badges_path %></p>
 
-<p><%= link_to 'my badges', "/users/#{current_user.id}/badges" %></p>
+<p><%= link_to t('.my_badges'), "/users/#{current_user.id}/badges" %></p>
 
 
 

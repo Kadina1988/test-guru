@@ -83,5 +83,5 @@ answers = Answer.create!([
                            { body: 'no', question: questions[15], correct: false }
                            ])
 
-badges = ([ { title: 'Backander', File: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' } ])
+badges = Badge.create!([ { title: 'Backander', file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' } ])
 

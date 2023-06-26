@@ -11,10 +11,7 @@ document.addEventListener('turbolinks:load',function() {
         let minutes = Math.floor(testTime / 60)
         let seconds = testTime - minutes * 60
 
-        let strTime = minutes + ':' + seconds
-        if { seconds < 10} {
-          strTime = minutes + ':' + '0' + seconds
-        }
+        let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
         if (testTime <= 1) {
           location.reload()
