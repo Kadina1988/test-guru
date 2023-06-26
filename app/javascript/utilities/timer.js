@@ -10,10 +10,11 @@ document.addEventListener('turbolinks:load',function() {
       function countDown() {
         let minutes = Math.floor(testTime / 60)
         let seconds = testTime - minutes * 60
-        if (seconds < 10) {
-          '0' + seconds
+
+        let strTime = minutes + ':' + seconds
+        if { seconds < 10} {
+          strTime = minutes + ':' + '0' + seconds
         }
-        let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
         if (testTime <= 1) {
           location.reload()
@@ -24,5 +25,5 @@ document.addEventListener('turbolinks:load',function() {
       }
     }
 })
-console.log('salam')
+console.log('lalam')
 
