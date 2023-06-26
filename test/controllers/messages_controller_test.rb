@@ -1,12 +1,14 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class MessagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get form" do
+  test 'should get form' do
     get messages_form_url
     assert_response :success
   end
 
-  test "should get send" do
+  test 'should get send' do
     get messages_send_url
     assert_response :success
   end

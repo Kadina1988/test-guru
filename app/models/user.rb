@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :database_authenticatable,
          :registerable,
@@ -18,7 +20,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
@@ -33,10 +34,10 @@ class User < ApplicationRecord
     badge_first_time = Badge.find_by(rules: 'passed the first time')
     badge_great      = Badge.find_by(rules: 'great result')
 
-    badges << badge_backand    if backender? && badge_backand != nil
-    badges << badge_level      if all_level_tests?(test_passages.last.test.level) && badge_level != nil
-    badges << badge_first_time if passed_first_time? && badge_first_time != nil
-    badges << badge_great      if great_result? && badge_great != nil
+    badges << badge_backand    if backender? && !badge_backand.nil?
+    badges << badge_level      if all_level_tests?(test_passages.last.test.level) && !badge_level.nil?
+    badges << badge_first_time if passed_first_time? && !badge_first_time.nil?
+    badges << badge_great      if great_result? && !badge_great.nil?
   end
 
   private
@@ -59,13 +60,11 @@ class User < ApplicationRecord
     test_passages.each do |passage|
       success_tests << passage.test if passage.success? && passage.test.level == level
     end
-    success_tests.uniq.count == Test.where(level: level).count
+    success_tests.uniq.count == Test.where(level:).count
   end
 
   def passed_first_time?
-    last_success_test_id = if test_passages.last.success?
-                            test_passages.last.test.id
-                           end
+    last_success_test_id = (test_passages.last.test.id if test_passages.last.success?)
     passed_test_ids.count(last_success_test_id) == 1
   end
 

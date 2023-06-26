@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -21,9 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'faraday-retry', '~> 2.1'
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
+gem 'faraday-retry', '~> 2.1'
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'jquery-rails'

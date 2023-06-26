@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
@@ -6,9 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    if @test_passage.success?
-      current_user.result
-    end
+    current_user.result if @test_passage.success?
   end
 
   def update

@@ -1,6 +1,7 @@
-class MessagesController < ApplicationController
+# frozen_string_literal: true
 
-  def new;end
+class MessagesController < ApplicationController
+  def new; end
 
   def create
     message = params[:message][:body]
@@ -9,7 +10,7 @@ class MessagesController < ApplicationController
       render :new
     else
       TestMailer.send_message(message, user_email).deliver_now
-      redirect_to tests_path , notice: t('.message_to_admin')
+      redirect_to tests_path, notice: t('.message_to_admin')
     end
   end
 end

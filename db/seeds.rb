@@ -1,8 +1,13 @@
+# frozen_string_literal: true
+
 users = User.create!([
-                      { first_name: 'Mike', last_name: 'Tison', email: 'az.ramaz@yandex.ru', password: '1234567', type: 'Admin'},
-                      { first_name: 'Rama', last_name: 'Mamura', email: 'aziev.kadina@yandex.ru', password: 'ramazan' },
-                      { first_name: 'Maga', last_name: 'Shpaga', email: 'ramazan@zan.com', password: 'ramazan' },
-                      { first_name: 'Evgeni', last_name: 'Prigozin', email: 'shamilek@lek.com', password: 'shamilek', type: 'Admin' }
+                       { first_name: 'Mike', last_name: 'Tison', email: 'az.ramaz@yandex.ru', password: '1234567',
+                         type: 'Admin' },
+                       { first_name: 'Rama', last_name: 'Mamura', email: 'aziev.kadina@yandex.ru',
+                         password: 'ramazan' },
+                       { first_name: 'Maga', last_name: 'Shpaga', email: 'ramazan@zan.com', password: 'ramazan' },
+                       { first_name: 'Evgeni', last_name: 'Prigozin', email: 'shamilek@lek.com', password: 'shamilek',
+                         type: 'Admin' }
                      ])
 categories = Category.create!([{ title: 'Backend' }, { title: 'Frontend' }])
 
@@ -81,7 +86,7 @@ answers = Answer.create!([
                            { body: 'no', question: questions[14], correct: false },
                            { body: 'yes', question: questions[15] },
                            { body: 'no', question: questions[15], correct: false }
-                           ])
+                         ])
 
-badges = Badge.create!([ { title: 'Backander', file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' } ])
-
+badges = Badge.create!([{ title: 'Backander',
+                          file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' }])

@@ -1,38 +1,42 @@
-class Admin::BadgesController < Admin::BaseController
-  before_action :find_badge, only: %i[show, destroy]
+# frozen_string_literal: true
 
-  def index
-    @badges = Badge.all
-  end
+module Admin
+  class BadgesController < Admin::BaseController
+    before_action :find_badge, only: %i[show destroy]
 
-  def show;end
-
-  def new
-    @badge = Badge.new
-  end
-
-  def create
-    @badge = Badge.create(badge_params)
-
-    if @badge.save
-      redirect_to admin_badges_path
-    else
-      render :new
+    def index
+      @badges = Badge.all
     end
-  end
 
-  def destroy
-    @badge.destroy
-    redirect_to admin_badges_path
-  end
+    def show; end
 
-  private
+    def new
+      @badge = Badge.new
+    end
 
-  def find_badge
-    @badge = Badge.find(params[:id])
-  end
+    def create
+      @badge = Badge.create(badge_params)
 
-  def badge_params
-    params.require(:badge).permit(:title, :file, :rules)
+      if @badge.save
+        redirect_to admin_badges_path
+      else
+        render :new
+      end
+    end
+
+    def destroy
+      @badge.destroy
+      redirect_to admin_badges_path
+    end
+
+    private
+
+    def find_badge
+      @badge = Badge.find(params[:id])
+    end
+
+    def badge_params
+      params.require(:badge).permit(:title, :file, :rules)
+    end
   end
 end

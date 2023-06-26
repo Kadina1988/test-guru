@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   SUCCESS_NUMBER = 85
 
@@ -35,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def set_end_time
-    start_test = self.created_at
+    start_test = created_at
     seconds = test.timer * 60
     end_time = start_test + seconds
   end

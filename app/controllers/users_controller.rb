@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def list_badges
     @badges = current_user.badges
   end

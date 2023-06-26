@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   INFINITY = Float::INFINITY
 

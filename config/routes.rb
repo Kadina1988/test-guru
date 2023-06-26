@@ -1,10 +1,10 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
-
 
   resources :tests, only: :index do
     member do
@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
-      resources :questions, shallow: :true do
-        resources :answers, shallow: :true
+      resources :questions, shallow: true do
+        resources :answers, shallow: true
       end
     end
     resources :gists, only: :index

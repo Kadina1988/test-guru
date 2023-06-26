@@ -22,5 +22,5 @@ document.addEventListener('turbolinks:load',function() {
       }
     }
 })
-console.log('lalam')
+
 
