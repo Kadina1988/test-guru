@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    current_user.result if @test_passage.success?
+    current_user.result if @test_passages.success?
   end
 
   def update
@@ -27,4 +27,5 @@ class TestPassagesController < ApplicationController
   def set_test_passege
     @test_passage = TestPassage.find(params[:id])
   end
+
 end
