@@ -9,6 +9,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question
 
+  scope :category_backand, ->(user) { where(user: user)}
+
   def completed?
     current_question.nil?
   end
