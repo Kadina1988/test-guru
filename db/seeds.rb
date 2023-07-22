@@ -88,11 +88,11 @@ answers = Answer.create!([
                            { body: 'no', question: questions[15], correct: false }
                          ])
 
-badges = Badge.create!([{ title: 'Backander',
-                          file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' },
-                        { title: 'All tests level easy',
-                          file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=12',
-                          rules: 'all tests level easy' },
-                        { title: 'Fast',
-                          file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=15',
-                          rules: 'passed the first time' }])
+# badges = Badge.create!([{ title: 'Backander',
+#                           file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13', rules: 'all backand tests' },
+#                         { title: 'All tests level easy',
+#                           file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=12',
+#                           rules: 'all tests level easy' },
+#                         { title: 'Fast',
+#                           file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=15',
+#                           rules: 'passed the first time' }])

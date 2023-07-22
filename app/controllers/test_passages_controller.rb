@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    current_user.result if @test_passages.success?
+    BadgeService.new(@test_passage) if @test_passage.success?
   end
 
   def update

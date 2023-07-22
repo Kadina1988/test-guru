@@ -13,15 +13,10 @@
       <%= f.text_field :file, class: 'input file' %>
     </p>
 
-    <p><%= f.label :rules %>:</p>
-    <div class='button-badge'>
-      <% ['all backand tests', 'all tests level easy', 'passed the first time', 'great result'].each do |rule| %>
-        <p>
-          <%= f.radio_button :rules, rule %>
-          <%= label_tag rule, rule %>
-        </p>
-      <% end %>
-    </div>
+    <p>
+      <%= f.label :rule %>:
+      <%= f.select :rule, Badge.rules.keys %>
+    </p>
 
     <p>
       <%= f.submit %>
