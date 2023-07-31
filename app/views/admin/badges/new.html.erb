@@ -2,6 +2,7 @@
   <h2>Create Badge<h2>
 
   <%= form_with model: [:admin, @badge] do |f| %>
+
   <%= render 'shared/errors', object: @badge %>
     <p>
       <%= f.label :title %>
@@ -15,7 +16,7 @@
 
     <p>
       <%= f.label :rule %>:
-      <%= f.select :rule, Badge.rules.keys %>
+      <%= f.select :rule, options_for_select(Badge.rules.keys.map { |rule| [rule.humanize, rule]}) %>
     </p>
 
     <p>

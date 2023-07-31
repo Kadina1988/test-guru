@@ -8,8 +8,10 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
+  before_save :set_success, unless: :new_record?
 
-  scope :category_backand, ->(user) { where(user: user)}
+  scope :category_complete,    ->(user, category) { includes(:user, test: [:category]).where(user: user, test: { category: category } ) }
+  scope :level_complete,       ->(user, level) { includes(:user, :test).where(user: user, test: { level: level } ) }
 
   def completed?
     current_question.nil?
@@ -69,4 +71,9 @@ class TestPassage < ApplicationRecord
       test.questions.order(:id).where('id > ?', current_question_id).first
     end
   end
+
+  def set_success
+    self.success = self.success?
+  end
+
 end

@@ -1,5 +1,4 @@
-class BadgeService
-
+class DemBadgeService
   def initialize(test_passage)
     @test_passage  = test_passage
     @user          = test_passage.user
@@ -8,16 +7,19 @@ class BadgeService
 
   def call
     Badge.all.each do |badge|
-      if send("#{badge.rule}")
-        # @user.badges << badge
-        puts badge
+      if send("#{badge.rule}?")
+        @user.badges << badge
       end
     end
   end
 
-  def category_complete?(category)
+def again_complete?
+
+end
+
+  def backend_category_complete?
     backand_pass_tests = TestPassage
-                         .category_complete(@user, category)
+                         .category_backend(@user)
                          .where(success: true)
                          .pluck(:test_id)
                          .uniq
@@ -27,9 +29,9 @@ class BadgeService
     backand_pass_tests == backand_tests
   end
 
-  def level_complete?(level)
+  def easy_level_complete?
     easy_pass_tests = TestPassage
-                      .level_complete(@user, level)
+                      .level_easy(@user)
                       .where(success: true)
                       .pluck(:test_id)
                       .uniq
@@ -43,4 +45,11 @@ class BadgeService
     @user.passed_test_ids
          .count(@user.passed_tests.last.id) == 1 && @test_passage.success?
   end
+
+  def hundred_persent?
+    @test_passage.test_result == 100
+  end
+
 end
+
+
