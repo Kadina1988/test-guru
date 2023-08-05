@@ -17,16 +17,18 @@ class BadgeService
   end
 
   def category_complete
-    @category_tests_ids = Test.same_category(@test.category.title).pluck(:id)
+    @category_tests = Test.same_category(@test.category.title)
 
-    @passed_tests_of_category_ids = success_tests.includes(:test)
-                                                 .where(test: category_tests_ids)
-                                                 .pluck(:test_id)
+    @passed_tests_of_category = success_tests.includes(:test)
+                                                 .where(test: @category_tests.ids)
+                                                 .where(checked_category: false)
 
-  #  if @category_tests_ids & @passed_tests_of_category_ids == @category_tests_ids
-  #     @user.badges << Badge.find_by(rule: 'category_complete')
-  #   end
-
+    if @category_tests.ids & @passed_tests_of_category.ids == @category_tests.ids
+      @passed_tests_of_category.each { |i| i.update_columns(checked_category: true) }
+      true
+    else
+      false
+    end
   end
 
   def level_complete
