@@ -7,7 +7,9 @@ class TestPassagesController < ApplicationController
     redirect_to result_test_passage_path(@test_passage) if @test_passage.end_time?
   end
 
-  def result;end
+  def result
+    flash[:alert] = 'Time out!' if @test_passage.end_time?
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])

@@ -5,7 +5,8 @@ class CreateBadges < ActiveRecord::Migration[6.1]
     create_table :badges do |t|
       t.string  :title, null: false
       t.string  :file, null: false
-      t.integer  :rule
+      t.srting  :rule, null: false
+      t.string  :value
 
       t.timestamps
     end

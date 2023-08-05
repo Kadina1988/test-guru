@@ -6,5 +6,5 @@ class Badge < ApplicationRecord
   validates :title, presence: true
   validates :file , presence: true, format: { with: URI::DEFAULT_PARSER.make_regexp }
 
-  enum rules: { category_complete: 0, level_complete: 1, first_try: 2 }
+  RULE = ['category_complete', 'level_complete', 'first_try']
 end

@@ -1,5 +1,7 @@
 class BadgeService
 
+  attr_accessor :success_tests, :passed_tests_of_category_ids, :category_tests_ids, :user
+
   def initialize(test_passage)
     @test_passage  = test_passage
     @user          = test_passage.user
@@ -7,39 +9,41 @@ class BadgeService
   end
 
   def call
-    Badge.all.each do |badge|
-      if send("#{badge.rule}")
-        # @user.badges << badge
-        puts badge
-      end
-    end
+    Badge.find_each { |badge| send(badge.rule) }
   end
 
-  def category_complete?(category)
-    backand_pass_tests = TestPassage
-                         .category_complete(@user, category)
-                         .where(success: true)
-                         .pluck(:test_id)
-                         .uniq
-                         .count
-
-    backand_tests = Test.where(category_id: 1).count
-    backand_pass_tests == backand_tests
+  def success_tests
+    @user.test_passages.where(success: true)
   end
 
-  def level_complete?(level)
-    easy_pass_tests = TestPassage
-                      .level_complete(@user, level)
-                      .where(success: true)
-                      .pluck(:test_id)
-                      .uniq
-                      .count
+  def category_complete
+    @category_tests_ids = Test.same_category(@test.category.title).pluck(:id)
 
-    easy_tests = Test.where(level: 1).count
-    easy_pass_tests == easy_tests
+    @passed_tests_of_category_ids = success_tests.includes(:test)
+                                                 .where(test: category_tests_ids)
+                                                 .pluck(:test_id)
+
+  #  if @category_tests_ids & @passed_tests_of_category_ids == @category_tests_ids
+  #     @user.badges << Badge.find_by(rule: 'category_complete')
+  #   end
+
   end
 
-  def first_try?
+  def level_complete
+    puts 'level complete'
+    # passed_tests_ids = TestPassage
+    #                    .level_complete(@user, @test.level)
+    #                    .where(success: true)
+    #                    .pluck(:id)
+    #                    .uniq
+
+    # level_tests_ids = Test.where(level: 1)
+    #                   .pluck(:test_id)
+
+    # passed_tests_ids & level_tests_ids == level_tests_ids
+  end
+
+  def first_try
     @user.passed_test_ids
          .count(@user.passed_tests.last.id) == 1 && @test_passage.success?
   end

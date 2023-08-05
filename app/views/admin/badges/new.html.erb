@@ -1,29 +1,33 @@
-<div class='form-badge'>
-  <h2>Create Badge<h2>
+<h2>Create Badge<h2>
 
-  <%= form_with model: [:admin, @badge] do |f| %>
+<%= form_with model: [:admin, @badge] do |f| %>
 
   <%= render 'shared/errors', object: @badge %>
-    <p>
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'input' %>
-    </p>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
 
-    <p>
-      <%= f.label :file %>
-      <%= f.text_field :file, class: 'input file' %>
-    </p>
+  <p>
+    <%= f.label :file %>
+    <%= f.text_field :file %>
+  </p>
 
-    <p>
-      <%= f.label :rule %>:
-      <%= f.select :rule, options_for_select(Badge.rules.keys.map { |rule| [rule.humanize, rule]}) %>
-    </p>
+  <p>
+    <%= f.label :rule %>:
+    <%= f.select :rule, Badge::RULE %>
+  </p>
 
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
+  <p>
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+  </p>
 
-  <p><%= link_to 'back', :back %></p>
-</div>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'back', :back %></p>
+
 
