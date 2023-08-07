@@ -1,7 +1,5 @@
 class BadgeService
 
-  attr_accessor :success_tests, :passed_tests_of_category_ids, :category_tests_ids, :user
-
   def initialize(test_passage)
     @test_passage  = test_passage
     @user          = test_passage.user
@@ -9,44 +7,46 @@ class BadgeService
   end
 
   def call
-    Badge.find_each { |badge| send(badge.rule) }
+    Badge.find_each do |badge|
+      send(badge.rule, badge.value)
+    end
   end
+
+  private
 
   def success_tests
     @user.test_passages.where(success: true)
   end
 
-  def category_complete
-    @category_tests = Test.same_category(@test.category.title)
+  def category_complete(category)
+    category_tests_ids = Test.same_category(category).pluck(:id)
 
-    @passed_tests_of_category = success_tests.includes(:test)
-                                                 .where(test: @category_tests.ids)
-                                                 .where(checked_category: false)
+    passed_tests = success_tests.includes(:test)
+                                .where(test: category_tests_ids)
+                                .where(checked_category: false)
 
-    if @category_tests.ids & @passed_tests_of_category.ids == @category_tests.ids
-      @passed_tests_of_category.each { |i| i.update_columns(checked_category: true) }
-      true
-    else
-      false
+    if category_tests_ids & passed_tests.pluck(:test_id) == category_tests_ids
+      @user.badges << Badge.find_by(rule: 'category_complete', value: category)
+      passed_tests.each { |i| i.update_columns(checked_category: true) }
     end
   end
 
-  def level_complete
-    puts 'level complete'
-    # passed_tests_ids = TestPassage
-    #                    .level_complete(@user, @test.level)
-    #                    .where(success: true)
-    #                    .pluck(:id)
-    #                    .uniq
+  def level_complete(level)
+    level_tests_ids = Test.where(level: level).pluck(:id)
 
-    # level_tests_ids = Test.where(level: 1)
-    #                   .pluck(:test_id)
+    passed_tests = success_tests.includes(:test)
+                                .where(test: level_tests_ids)
+                                .where(checked_level: false)
 
-    # passed_tests_ids & level_tests_ids == level_tests_ids
+    if level_tests_ids & passed_tests.pluck(:test_id) == level_tests_ids
+      @user.badges << Badge.find_by(rule: 'level_complete', value: level)
+      passed_tests.each { |i| i.update_columns(checked_level: true) }
+    end
   end
 
-  def first_try
-    @user.passed_test_ids
-         .count(@user.passed_tests.last.id) == 1 && @test_passage.success?
+  def first_try(value = '')
+    if @user.passed_test_ids.count(@user.passed_tests.last.id) == 1 && @test_passage.success?
+      @user.badges << Badge.find_by(rule: 'first_try')
+    end
   end
 end

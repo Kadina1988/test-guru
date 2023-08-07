@@ -90,6 +90,13 @@ answers = Answer.create!([
 
 badges = Badge.create!([{ title: 'Backander',
                           file: 'https://avatars.mds.yandex.net/i?id=412f2b72b7e4dbb1fbc63292c4e632ba-5210535-images-thumbs&n=13',
-                          rule: 'category_complete?',
-                          value: 1 }
+                          rule: 'category_complete',
+                          value: 'Backend' },
+                        { title: 'Guru of easy tests',
+                          file: 'https://image.shutterstock.com/shutterstock/photos/129379196/display_1500/stock-vector-award-rosette-ribbon-icon-eps-129379196.jpg',
+                          rule: 'level_complete',
+                          value: '1' },
+                        { title: 'Fast',
+                          file: 'https://thumbs.dreamstime.com/b/синь-значка-награ-ы-енты-69340886.jpg',
+                          rule: 'first_try'}
                         ])

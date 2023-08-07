@@ -10,9 +10,6 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question
   before_save :set_success, unless: :new_record?
 
-  scope :category_complete,    ->(user, category) { includes(:user, test: [:category]).where(user: user, test: { category: category } ) }
-  scope :level_complete,       ->(user, level) { includes(:user, :test).where(user: user, test: { level: level } ) }
-
   def completed?
     current_question.nil?
   end

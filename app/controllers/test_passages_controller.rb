@@ -4,12 +4,13 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
   def show
-    redirect_to result_test_passage_path(@test_passage) if @test_passage.end_time?
+    if @test_passage.end_time?
+      redirect_to result_test_passage_path(@test_passage)
+      flash[:alert] = 'Time out'
+    end
   end
 
-  def result
-    flash[:alert] = 'Time out!' if @test_passage.end_time?
-  end
+  def result;end
 
   def update
     @test_passage.accept!(params[:answer_ids])
