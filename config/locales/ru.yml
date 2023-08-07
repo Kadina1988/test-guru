@@ -57,6 +57,7 @@ ru:
 
   test_passages:
     show:
+      time_end: 'Время истекло'
       test: 'Тест'
       question: 'Вопрос'
       from: 'из'

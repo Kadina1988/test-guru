@@ -6,7 +6,7 @@ class TestPassagesController < ApplicationController
   def show
     if @test_passage.end_time?
       redirect_to result_test_passage_path(@test_passage)
-      flash[:alert] = 'Time out'
+      flash[:alert] = t('.time_end')
     end
   end
 
