@@ -39,6 +39,7 @@ ru:
 
   tests:
     index:
+      time: 'Время'
       header: 'Доступные тесты'
       name: 'Название'
       questions: 'Кол-во вопросов'
@@ -49,6 +50,7 @@ ru:
 
   test_passages:
     show:
+      time_end: 'Время закончилось'
       test: 'Тест'
       question: 'Вопрос'
       from: 'из'

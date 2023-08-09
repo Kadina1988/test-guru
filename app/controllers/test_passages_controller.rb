@@ -1,7 +1,12 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passege, only: %i[show result update send_message message]
 
-  def show;end
+  def show
+    if @test_passage.end_time?
+      redirect_to result_test_passage_path(@test_passage)
+      flash[:alert] = t('.time_end')
+    end
+  end
 
   def result;end
 

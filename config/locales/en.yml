@@ -38,6 +38,7 @@ en:
 
   tests:
     index:
+      time: 'Time'
       header: 'Tricky tests'
       name: 'Name'
       questions: 'Questions'
@@ -49,6 +50,7 @@ en:
 
   test_passages:
     show:
+      time_end: 'Time out'
       test: 'Test'
       question: 'Question'
       from: 'from'
