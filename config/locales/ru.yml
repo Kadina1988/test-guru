@@ -24,6 +24,10 @@ ru:
       answer:
         body: 'Ответ:'
         correct: 'Правильный:'
+      badge:
+        title: 'Название'
+        file: 'URL с изображением бейджа'
+        rules: 'Правила'
 
   shared:
     errors:
@@ -42,8 +46,12 @@ ru:
       header: 'Доступные тесты'
       name: 'Название'
       questions: 'Кол-во вопросов'
+      time: 'Время'
+      level: 'Уровень'
       action: 'Действие'
       message_to_admin: 'Сообщение Администратору'
+      badges: 'Бейджи'
+      my_badges: 'Мои Бейджи'
     test:
       start: 'Старт'
 
@@ -55,6 +63,8 @@ ru:
       tests: 'список тестов'
       next: 'следующий вопрос'
       message_to_admin: 'Сообщение Администратору'
+      badges: 'Бейджи'
+      my_badges: 'Мои Бейджи'
     result:
       header: 'Тест %{title} пройден'
       question: 'вопросов'
@@ -66,8 +76,11 @@ ru:
         zero: '0 правильных ответов'
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
+        many: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
       message_to_admin: 'Сообщение Администратору'
+      badges: 'Бейджи'
+      my_badges: 'Мои Бейджи'
   messages:
     create:
       message_to_admin: 'Сообщение было отправлено'
@@ -92,6 +105,7 @@ ru:
         action: 'Действие'
         new: 'Новый тест'
         gists: 'Список Гистов'
+        badges: 'Бейджи'
       test:
         sure: 'Вы уверены?'
         show: 'Открыть'
@@ -144,6 +158,16 @@ ru:
     gists:
       index:
         back: 'Назад'
+    badges:
+      index:
+        title: 'Название'
+        view: 'Вид'
+        rule: 'Условия'
+        action: 'Действие'
+        new_badge: 'Создать Бейдж'
+        back: 'Назад'
+      badge:
+        delete: 'Удалить'
 
   users:
     sessions:
@@ -158,5 +182,3 @@ ru:
     gist_params:
       description: 'Вопрос теста %{title} от Тест Гуру'
       files: 'тест-гуру-вопрос.txt'
-
-

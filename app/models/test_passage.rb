@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
+  before_save :set_success, unless: :new_record?
 
   def completed?
     current_question.nil?
@@ -54,5 +55,9 @@ class TestPassage < ApplicationRecord
     else
       test.questions.order(:id).where('id > ?', current_question_id).first
     end
+  end
+
+  def set_success
+    self.success = self.success?
   end
 end

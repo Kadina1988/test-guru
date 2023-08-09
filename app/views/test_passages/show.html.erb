@@ -20,4 +20,7 @@
   <p><%= link_to t('.message_to_admin'), new_message_path %></p>
 <% end %>
 
+<p><%= link_to t('.badges'), badges_path %></p>
+<p><%= link_to t('.my_badges'), "/users/#{current_user.id}/badges" %></p>
+
 
