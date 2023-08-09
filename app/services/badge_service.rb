@@ -19,6 +19,7 @@ class BadgeService
   end
 
   def category_complete(category)
+    return unless category.class == String
     category_tests_ids = Test.same_category(category).pluck(:id)
 
     passed_tests = success_tests.includes(:test)
@@ -32,6 +33,7 @@ class BadgeService
   end
 
   def level_complete(level)
+    return unless level.class == Integer
     level_tests_ids = Test.where(level: level).pluck(:id)
 
     passed_tests = success_tests.includes(:test)
