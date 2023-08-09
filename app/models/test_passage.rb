@@ -33,16 +33,6 @@ class TestPassage < ApplicationRecord
     self.test.questions.where('id <= ?', current_question).count
   end
 
-  def end_time?
-    Time.current >= set_end_time
-  end
-
-  def set_end_time
-    start_test = created_at
-    seconds = test.timer * 60
-    end_time = start_test + seconds
-  end
-
   private
 
   def set_current_question

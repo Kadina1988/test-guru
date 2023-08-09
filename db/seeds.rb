@@ -12,10 +12,10 @@ users = User.create!([
 categories = Category.create!([{ title: 'Backend' }, { title: 'Frontend' }])
 
 tests = Test.create!([
-                       { title: 'Ruby', category: categories[0], author: users[0], timer: 1 },
-                       { title: 'Java Script', category: categories[1], level: 2, author: users[0], timer: 3 },
-                       { title: 'Python', category: categories[1], author: users[0], timer: 2 },
-                       { title: 'Java', category: categories[0], author: users[0], timer: 1 }
+                       { title: 'Ruby', category: categories[0], author: users[0] },
+                       { title: 'Java Script', category: categories[1], level: 2, author: users[0] },
+                       { title: 'Python', category: categories[1], author: users[0] },
+                       { title: 'Java', category: categories[0], author: users[0] }
                      ])
 
 questions = Question.create!([

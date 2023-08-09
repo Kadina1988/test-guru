@@ -58,7 +58,6 @@ en:
 
   test_passages:
     show:
-      time_end: 'Time end'
       test: 'Test'
       question: 'Question'
       from: 'from'
