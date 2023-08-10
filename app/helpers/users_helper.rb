@@ -1,9 +1,9 @@
 module UsersHelper
   def badges_header
     if @badges.empty?
-      "#{current_user.first_name} у вас нет бейджей"
+      t('.no_badges', name: current_user.first_name)
     else
-      'Ваши бейджи'
+      t('.your_badges')
     end
   end
 end

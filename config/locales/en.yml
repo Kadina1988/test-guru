@@ -173,6 +173,9 @@ en:
     sessions:
       create:
         welcome: 'Welcome %{name}'
+    list_badges:
+      no_badges: "%{name} you don't have any badges"
+      your_badges: 'Your badges'
 
   test_mailer:
     completed_test:

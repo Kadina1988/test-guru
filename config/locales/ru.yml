@@ -173,6 +173,9 @@ ru:
     sessions:
       create:
         welcome: 'Добро пожаловать %{name}'
+    list_badges:
+      no_badges: '%{name} у вас нет бейджей'
+      your_badges: 'Ваши бейджи'
 
   test_mailer:
     completed_test:
@@ -182,3 +185,6 @@ ru:
     gist_params:
       description: 'Вопрос теста %{title} от Тест Гуру'
       files: 'тест-гуру-вопрос.txt'
+
+
+
