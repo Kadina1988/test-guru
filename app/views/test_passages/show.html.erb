@@ -17,7 +17,7 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', gists_path, method: :post %></p>
-  <p><%= form.submit t('.next') %></p>
+  <p><%= form.submit t('.next'), class: 'button-next' %></p>
   <p><%= link_to t('.message_to_admin'), new_message_path %></p>
 <% end %>
 
