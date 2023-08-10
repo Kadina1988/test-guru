@@ -50,7 +50,6 @@ ru:
 
   test_passages:
     show:
-      time_end: 'Время закончилось'
       test: 'Тест'
       question: 'Вопрос'
       from: 'из'
@@ -70,6 +69,8 @@ ru:
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
       message_to_admin: 'Сообщение Администратору'
+    update:
+      time_end: 'Время закончилось'
   messages:
     create:
       message_to_admin: 'Сообщение было отправлено'
