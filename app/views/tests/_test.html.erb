@@ -3,7 +3,7 @@
     <td class='col-7'><%= test.title %></td>
     <td class='col-2'><%= test.category.title %></td>
     <td class='col-2'><%= test.questions.count %></td>
-    <td class='col-2'><%= test_level(test.level) %></td>
+    <td class='col-2'><%= test_level(test) %></td>
     <td class='col-3' id='start'><%= button_to t('.start'), start_test_path(test), class: "btn btn-outline-success btn-sm" %></td>
   </div>
 </tr>
