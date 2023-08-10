@@ -14,7 +14,7 @@ document.addEventListener('turbolinks:load',function() {
         let strTime = `${Math.trunc(minutes)}:${Math.trunc(seconds)}`
 
         if (testTime <= 1) {
-          location.reload()
+          document.querySelector('.button-next').click()
         }
 
         time.innerHTML = strTime
