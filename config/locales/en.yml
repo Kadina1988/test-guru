@@ -38,6 +38,7 @@ en:
 
   tests:
     index:
+      time: 'Time'
       header: 'Tricky tests'
       name: 'Name'
       questions: 'Questions'
@@ -67,6 +68,8 @@ en:
         zero: 'zero correct answers'
         one: "%{count} answer correct from %{questions}"
         other: "%{count} answers correct from %{questions}"
+    update:
+      time_end: 'Time out'
 
   messages:
     create:

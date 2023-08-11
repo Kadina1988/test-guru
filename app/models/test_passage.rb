@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question
 
   def completed?
-    current_question.nil?
+    current_question.nil? || end_time?
   end
 
   def accept!(answer_ids)
@@ -28,6 +28,16 @@ class TestPassage < ApplicationRecord
 
   def number
     self.test.questions.where('id <= ?', current_question).count
+  end
+
+  def set_end_time
+    start_test = created_at
+    seconds = test.timer * 60
+    end_time = start_test + seconds
+  end
+
+  def end_time?
+    Time.current >= set_end_time
   end
 
   private

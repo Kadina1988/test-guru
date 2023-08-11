@@ -39,6 +39,7 @@ ru:
 
   tests:
     index:
+      time: 'Время'
       header: 'Доступные тесты'
       name: 'Название'
       questions: 'Кол-во вопросов'
@@ -68,6 +69,8 @@ ru:
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
       message_to_admin: 'Сообщение Администратору'
+    update:
+      time_end: 'Время закончилось'
   messages:
     create:
       message_to_admin: 'Сообщение было отправлено'
