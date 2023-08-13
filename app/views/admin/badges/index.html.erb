@@ -1,0 +1,17 @@
+<h3>Badges list</h3>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.view')%></th>
+      <th><%= t('.rule')%></th>
+      <th>Value</th>
+      <th><%= t('.action')%></th>
+    </tr>
+  </thead>
+  <%= render @badges %>
+</table>
+
+<p><%= link_to t('.new_badge'), new_admin_badge_path %></p>
+<p><%= link_to t('.back'), admin_tests_path %>

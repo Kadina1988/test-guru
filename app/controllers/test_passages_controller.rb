@@ -10,6 +10,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       flash[:alert] = t('.time_end') if @test_passage.end_time?
+      BadgeService.new(@test_passage).call
       TestMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

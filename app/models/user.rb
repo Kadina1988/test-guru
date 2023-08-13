@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :passed_tests, through: :test_passages, source: :test, dependent: :destroy
   has_many :gists, dependent: :destroy
 
+  has_and_belongs_to_many :badges
+
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :first_name, presence: true
   validates :last_name, presence: true

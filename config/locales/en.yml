@@ -24,9 +24,14 @@ en:
       answer:
         body: 'Answer:'
         correct: 'Correct'
+      badge:
+        title: 'Title'
+        file: 'URL with badge'
+        rules: 'Rules'
     shared:
       nav:
         panel: 'Logout'
+
 
   shared:
     errors:
@@ -42,9 +47,13 @@ en:
       header: 'Tricky tests'
       name: 'Name'
       questions: 'Questions'
+      time: 'Time'
+      level: 'Level'
       action: 'Action'
       start: 'Start'
       message_to_admin: 'Message to the Admin'
+      badges: 'Badges'
+      my_badges: 'My Badges'
     test:
       start: 'Start'
 
@@ -56,6 +65,8 @@ en:
       tests: 'all tests'
       next: 'next question'
       message_to_admin: 'Message to the Admin'
+      badges: 'Badges'
+      my_badges: 'My Badges'
     result:
       header: 'The test %{title} was completed'
       question: 'questions'
@@ -70,6 +81,8 @@ en:
         other: "%{count} answers correct from %{questions}"
     update:
       time_end: 'Time out'
+      badges: 'Badges'
+      my_badges: 'My Badges'
 
   messages:
     create:
@@ -98,6 +111,7 @@ en:
         action: 'Action'
         new: 'New test'
         gists: 'Gists'
+        badges: 'Badges'
       test:
         sure: 'are you sure?'
         show: 'Open'
@@ -147,11 +161,24 @@ en:
     gists:
       index:
         back: 'Back'
+    badges:
+      index:
+        title: 'Title'
+        view: 'View'
+        rule: 'Rule'
+        action: 'Action'
+        new_badge: 'Create Badge'
+        back: 'Back'
+      badge:
+        delete: 'Delete'
 
   users:
     sessions:
       create:
         welcome: 'Welcome %{name}'
+    list_badges:
+      no_badges: "%{name} you don't have any badges"
+      your_badges: 'Your badges'
 
   test_mailer:
     completed_test:
@@ -161,4 +188,3 @@ en:
     gist_params:
       description: 'Question of test %{title} from Test Guru '
       files: 'test-guru-question.txt'
-

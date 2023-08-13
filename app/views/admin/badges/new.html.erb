@@ -1,0 +1,31 @@
+<h2>Create Badge<h2>
+
+<%= form_with model: [:admin, @badge] do |f| %>
+
+  <%= render 'shared/errors', object: @badge %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :file %>
+    <%= f.text_field :file %>
+  </p>
+
+  <p>
+    <%= f.label :rule %>:
+    <%= f.select :rule, Badge::RULES %>
+  </p>
+
+  <p>
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'back', :back %></p>

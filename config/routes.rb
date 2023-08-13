@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
 
+  resources :badges, only: :index
+  get 'users/:id/badges' => 'users#list_badges'
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
@@ -28,6 +31,7 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 
   resources :messages, only: %i[new create]
